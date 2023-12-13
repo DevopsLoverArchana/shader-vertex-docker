@@ -23,7 +23,9 @@ pipeline {
             post {
                 always
                 {
-                    emailext body:'Summary',subject:'Pipeline Status',to:'archana.sandbhorsv@gmail.com'
+                    mail to :"archana.sandbhorsv@gmail.com",
+                        subject:"sending and testing email",
+                        body:"Test"
                 }
             }
 }
