@@ -1,29 +1,37 @@
-pipeline {
+pipeline 
+{
     agent any
 
     stages {
-        stage('Build') {
-            steps {
+        stage('Build') 
+        {
+            steps
+            {
                 echo 'build application'
             }
         }
 
-        stage('Test') {
-            steps {
+        stage('Test') 
+        {
+            steps 
+            {
                 echo 'test application'
             }
         }
 
-        stage('Deploy') {
-            steps {
+        stage('Deploy') 
+        {
+            steps 
+            {
                 echo 'deploy application'
             }
         }
     }
-            post {
+            post 
+             {
                 always
                 {
-                    mail to :"archana.sandbhorsv@gmail.com",
+                     mail to :"archana.sandbhorsv@gmail.com",
                         subject:"sending and testing email",
                         body:"Test"
                 }
