@@ -17,13 +17,5 @@ pipeline{
       }
     }
   }
-  post{
-    sucess{
-      echo 'my pipeline sucess'
-    }
-    failuare{
-      echo 'pipeline failed'
-    }
-  }
 }
    
