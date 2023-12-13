@@ -4,37 +4,37 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Your build steps here
+                echo 'build application'
             }
         }
 
         stage('Test') {
             steps {
-                // Your test steps here
+                echo 'test application'
             }
         }
 
         stage('Deploy') {
             steps {
-                // Your deployment steps here
+                echo 'deploy application'
             }
             post {
                 success {
-                    // Send an email on successful deployment
                     emailext(
                         subject: "Deployment Successful",
                         body: "Your deployment was successful.",
                         to: "archana.sandbhorsv@gmail.com",
-                        attachLog: true
+                        attachLog: true,
+                        mimeType: 'text/html' // Optionally specify MIME type
                     )
                 }
                 failure {
-                    // Send an email if deployment fails
                     emailext(
                         subject: "Deployment Failed",
                         body: "Your deployment has failed. Please check the Jenkins logs.",
                         to: "archana.sandbhorsv@gmail.com",
-                        attachLog: true
+                        attachLog: true,
+                        mimeType: 'text/html' // Optionally specify MIME type
                     )
                 }
             }
